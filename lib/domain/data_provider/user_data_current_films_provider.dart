@@ -7,6 +7,7 @@ class UserDataCurrentFilmsProvider {
 
   Future<UserCurrentFilms> loadValue(String user_id) async {
     List<CurrentFilm> currentFilms = [
+
       CurrentFilm(
           '1',
           'Уэнздей',
