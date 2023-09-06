@@ -1,0 +1,210 @@
+
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:tvoe/domain/blocks/watched_films_blocks.dart';
+import 'package:tvoe/ui/widgets/watched_films.dart';
+
+import '../../domain/blocks/stage_films_blocks.dart';
+import 'films_stage.dart';
+
+
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  PageController controller=PageController();
+
+  @override
+  Widget build(BuildContext context) {
+    var pictureContainerWidth=MediaQuery. of(context). size. width;
+    return   SingleChildScrollView(
+      physics: ClampingScrollPhysics(),
+
+      child: Column(
+        children: [
+
+          FilmsStage(),
+
+          SizedBox(height: 32,),
+
+          WatchedFilms()
+      /*
+          Container(
+            alignment: Alignment.topLeft,
+            padding: EdgeInsets.only(left: 16),
+            child: Column(
+
+              children: [
+                Container(alignment: Alignment.centerLeft,
+
+                    height:45,
+                    child: Text("Продолжить просмотр", style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w600),)),
+                SizedBox(height: 10,),
+
+                Container(
+                  alignment: Alignment.topLeft,
+                  height: 208,
+                  //color: Colors.purple,
+                  child:
+                  ListView.separated(
+                      separatorBuilder: (BuildContext context, int index) => const SizedBox(width: 8,),
+                    scrollDirection: Axis.horizontal,
+                      itemCount: 2,
+                    itemBuilder: (BuildContext context, int index) {
+
+                      return
+
+                        Container(
+                          width: 226,
+
+                          child: Column(
+
+
+                            crossAxisAlignment: CrossAxisAlignment.start,
+
+
+                            children: [
+
+                              Stack(
+                                  children: [
+                                    Container(
+                                        height: 140,
+                                        //height: 128,
+                                        width: 226,
+                                        //width: 210,
+
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(
+                                              20),),
+                                        clipBehavior: Clip.hardEdge,
+
+
+                                        child:
+
+
+                                        FittedBox(
+                                          fit: BoxFit.cover,
+                                          //fit: BoxFit.cover,
+
+                                          child:
+                                          GestureDetector(
+                                            onTap: () {
+
+
+                                            },
+                                            child:
+                                            Image(
+                                                image: AssetImage(
+                                                    "images/wednesday.jpg")
+                                            ),
+
+
+/*
+                                                   Image(
+                                                       image: AssetImage(widget.user.pictures[position])
+                                                   ),
+
+*/
+
+
+                                          ),
+                                        )
+                                    ),
+                                    Positioned(
+                                        bottom: 10,
+                                        right: 10,
+                                        child: Container(
+                                          alignment: Alignment.center,
+                                          width: 44,
+                                          height: 20,
+                                          decoration: BoxDecoration(
+                                              color: Colors.black,
+                                              border: Border.all(
+                                                  color: Colors.grey, width: 1),
+                                              borderRadius: BorderRadius
+                                                  .circular(6)),
+                                          child: Text("12:34", style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 12)),
+                                        )
+
+                                    )
+                                  ]
+                              ),
+
+
+                              Container(
+                                  height: 18,
+                                  alignment: Alignment.centerLeft,
+                                  child:
+                                  Container(
+                                      height: 4,
+                                      alignment: Alignment.centerLeft,
+
+
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(2),
+                                        color: Color(0xFF4b4b4b),),
+                                      child: Container(
+                                        height: 4,
+                                        width: 50,
+
+                                        decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(
+                                                2), gradient: LinearGradient(
+                                          begin: Alignment.centerLeft,
+                                          end: Alignment.centerRight,
+                                          colors: [
+                                            Color(0xFF6814cc),
+                                            Color(0xFF2871fa),
+                                          ],
+                                        )
+
+
+                                        ),
+
+
+                                      )
+                                  )
+                              ),
+                              Text("Уэнздэй", style: TextStyle(fontSize: 14,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w600)),
+                              /*Text("1 сезон 4 серия", style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w400)),*/
+                             /* WatchedFilms(),*/
+
+                            ],
+                          ),
+                        );
+
+                        //container for 1 episode
+
+                    },
+
+
+                  ),
+                  
+                  //container for 1 episode
+                )
+
+              ],
+            ),
+
+          )
+
+          */
+        ],
+      ),
+    );
+
+  }
+}
+
