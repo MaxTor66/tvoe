@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:tvoe/domain/blocks/watched_films_blocks.dart';
 import 'package:tvoe/ui/widgets/primary.dart';
@@ -16,23 +15,16 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Tvoe',
       theme: ThemeData(
-
         primarySwatch: Colors.blue,
       ),
-      home:
-      MultiProvider(
-          providers: [
-            Provider<UserStageFilmsCubit>(create: (_)=>UserStageFilmsCubit(),
-              dispose: (context, value)=>value.close()
-
-            ),
-            Provider<UserWatchedFilmsCubit>(create: (_)=>UserWatchedFilmsCubit(),
-                dispose: (context, value)=>value.close()
-
-            )
-          ],
-          child: PrimaryPage()),
-
+      home: MultiProvider(providers: [
+        Provider<UserStageFilmsCubit>(
+            create: (_) => UserStageFilmsCubit(),
+            dispose: (context, value) => value.close()),
+        Provider<UserWatchedFilmsCubit>(
+            create: (_) => UserWatchedFilmsCubit(),
+            dispose: (context, value) => value.close())
+      ], child: PrimaryPage()),
     );
   }
 }
