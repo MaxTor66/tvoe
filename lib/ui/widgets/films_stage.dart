@@ -22,6 +22,7 @@ class _FilmsStageState extends State<FilmsStage> {
     List<Widget> indicator = [];
 
     List<Widget> showIndicator(int positionImage) {
+      if(cubit.state.currentUserStageFilms.stageFilms.length!=1){
       for (var i = 0;
           i < cubit.state.currentUserStageFilms.stageFilms.length;
           i++) {
@@ -43,7 +44,7 @@ class _FilmsStageState extends State<FilmsStage> {
             // decoration: BoxDecoration( borderRadius: BorderRadius.circular(9), color: Colors.purple),
           ));
         }
-      }
+      }}
       return indicator;
     }
 
