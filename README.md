@@ -1,6 +1,10 @@
 # tvoe
 
-A new Flutter project.
+Test Flutter project.
+
+Описание архитектуры и классов 
+- images/description of architecture and sketch of classes.jpg
+
 
 ## Getting Started
 
