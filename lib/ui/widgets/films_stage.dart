@@ -54,7 +54,8 @@ class _FilmsStageState extends State<FilmsStage> {
         builder: (context, snapshot) {
           var stageFilms = snapshot.data?.currentUserStageFilms.stageFilms;
           // return Text(stageFilms!.first.title, style: TextStyle(color:Colors.white),);
-          return Container(
+          return
+            Container(
               width: pictureContainerWidth,
               height: 509,
               child: Stack(
@@ -149,42 +150,7 @@ class _FilmsStageState extends State<FilmsStage> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: showIndicator(positionImage)
-                            /*
-                      [
-                        Container(
 
-                          height:9,
-                          width:9,
-
-                          decoration: BoxDecoration( borderRadius: BorderRadius.circular(9), color: Colors.purple),
-                        ),
-                        Container(
-
-                          height:9,
-                          width:9,
-
-                          decoration: BoxDecoration( borderRadius: BorderRadius.circular(9), color: Color(
-                              0xD54D4D4D)),
-                        ),
-                        Container(
-
-                          height:9,
-                          width:9,
-
-                          decoration: BoxDecoration( borderRadius: BorderRadius.circular(9), color: Color(
-                              0xD54D4D4D)),
-                        ),
-                        Container(
-
-                          height:9,
-                          width:9,
-
-                          decoration: BoxDecoration( borderRadius: BorderRadius.circular(9), color: Color(
-                              0xD54D4D4D)),
-                        )
-
-                      ]
-                      */
                             ,
                           ),
                         ),
